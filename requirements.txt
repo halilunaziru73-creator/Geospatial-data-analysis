@@ -1,0 +1,14 @@
+# geopandas and rasterio depend on GDAL; installing via conda-forge
+# (conda install -c conda-forge geopandas rasterio) is the most reliable route.
+numpy
+pandas
+matplotlib
+geopandas
+rasterio
+rasterstats
+shapely
+scikit-learn
+folium
+owslib
+requests
+animatplot
