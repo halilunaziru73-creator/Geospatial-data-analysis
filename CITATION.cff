@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+type: software
+title: "Geospatial Data Analysis"
+authors:
+  - family-names: Halilu
+    given-names: Naziru
+repository-code: "https://github.com/halilunaziru73-creator/Geospatial-data-analysis"
+license: MIT
+date-released: "2026-08-02"
+keywords:
+  - GIS
+  - remote sensing
+  - Google Earth Engine
+  - Sentinel
+  - land cover classification
