@@ -1,5 +1,7 @@
 # Geospatial Data Analysis
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE) ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+
 **Author:** Naziru Halilu
 
 A hands-on course/project package covering vector and raster GIS, optical and
@@ -104,6 +106,12 @@ in with a GEE-enabled Google account, paste the script, and click **Run**.
 ## License
 
 Released under the [MIT License](./LICENSE).
+
+## Citation
+
+If you use this repository, please cite it using the metadata in
+[`CITATION.cff`](./CITATION.cff) (GitHub renders a "Cite this repository"
+button on the repo's main page, in the top-right "About" panel).
 
 ## Related work
 
