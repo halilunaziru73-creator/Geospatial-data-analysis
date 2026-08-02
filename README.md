@@ -38,6 +38,61 @@ All `.7z` archives are kept compressed because several of the underlying
 shapefiles individually exceed 100 MB uncompressed. Extract them locally with
 7-Zip or `p7zip` before use.
 
+## How to Run the Code
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/halilunaziru73-creator/Geospatial-data-analysis.git
+cd Geospatial-data-analysis
+```
+
+### 2. Install dependencies
+
+This is a Jupyter notebook-based package. At minimum you'll need:
+
+```bash
+pip install jupyter numpy pandas matplotlib geopandas rasterio scikit-learn earthengine-api
+```
+
+(Some notebooks may need additional packages depending on which cells you run —
+install any missing package as prompted.)
+
+### 3. Extract the compressed data archives
+
+Several shapefiles/results are kept as `.7z` archives because they exceed
+100 MB uncompressed. Extract them first:
+
+```bash
+7z x GIS_Vector_Layers_Soil_Hydrology_AgriculturalPlots.7z
+7z x Class3_Intersection_Plots.7z
+7z x Unsupervised_Classification_PlotResults.7z
+```
+
+(Install `p7zip-full` / `p7zip` first if `7z` isn't available on your system.)
+
+### 4. Launch and run the notebooks in order
+
+```bash
+jupyter notebook
+```
+
+Then open and run, in this order (each is self-contained but file names/paths
+are aligned across notebooks):
+
+1. `01_Vector_Data_Analysis.ipynb`
+2. `02_Raster_Data_Analysis.ipynb`
+3. `03_Optical_Data_Sentinel2_NDVI.ipynb`
+4. `04_Unsupervised_Classification.ipynb`
+5. `05_Supervised_Classification.ipynb`
+6. `06_Sentinel1_Download_Processing_TimeSeries.ipynb`
+
+### 5. Google Earth Engine script
+
+`GoogleEarthEngine_Class3_CloudMasking.js` runs separately in the
+[Google Earth Engine Code Editor](https://code.earthengine.google.com/) — sign
+in with a GEE-enabled Google account, paste the script, and click **Run**.
+
 ## Notes
 
 - Institutional logos embedded in the notebooks reflect only the funding
