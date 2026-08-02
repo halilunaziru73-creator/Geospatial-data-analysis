@@ -11,15 +11,15 @@ classification in Python and Google Earth Engine.
 
 ## Contents
 
-- `01_Vector_Data_Analysis.ipynb` — vector data manipulation (agricultural plots).
-- `02_Raster_Data_Analysis.ipynb` — raster data manipulation; digital elevation
+- `01_Vector_Data_Analysis.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/01_Vector_Data_Analysis.ipynb) — vector data manipulation (agricultural plots).
+- `02_Raster_Data_Analysis.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/02_Raster_Data_Analysis.ipynb) — raster data manipulation; digital elevation
   model, slope map generation, orthophotos.
-- `03_Optical_Data_Sentinel2_NDVI.ipynb` — working with a downloaded Sentinel-2
+- `03_Optical_Data_Sentinel2_NDVI.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/03_Optical_Data_Sentinel2_NDVI.ipynb) — working with a downloaded Sentinel-2
   image: NDVI, time-series generation from CSV, plot/crop comparison.
-- `04_Unsupervised_Classification.ipynb` — unsupervised classification with a
+- `04_Unsupervised_Classification.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/04_Unsupervised_Classification.ipynb) — unsupervised classification with a
   single Planet image and a 3-date time series (April, August, November).
-- `05_Supervised_Classification.ipynb` — supervised classification in Python.
-- `06_Sentinel1_Download_Processing_TimeSeries.ipynb` — Sentinel-1 download,
+- `05_Supervised_Classification.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/05_Supervised_Classification.ipynb) — supervised classification in Python.
+- `06_Sentinel1_Download_Processing_TimeSeries.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/06_Sentinel1_Download_Processing_TimeSeries.ipynb) — Sentinel-1 download,
   processing, and time-series analysis.
 - `GoogleEarthEngine_Class3_CloudMasking.js` — Google Earth Engine script
   (filters, cloud masking, image collection handling).
@@ -121,7 +121,7 @@ learning for agronomic and environmental applications:
 
 - [Digital Twin for Gully Biocontrol](https://github.com/halilunaziru73-creator/Digital-Twin-for-the-Evaluation-of-Experimental-Gully-Biocontrol-Using-Morning-Glory-Ipomoea-spp)
 - [Geometry-Agnostic Contrastive Learning (GACL)](https://github.com/halilunaziru73-creator/Geometry-Agnostic-Contrastive-Learning-GACL)
-- [Real-Time RGB Proxy Vegetation Indexing (N_GACL)](https://github.com/halilunaziru73-creator/Real-Time-RGB-Proxy-Vegetation-Indexing-and-Texture-Analysis-for-UAV-and-Handheld-Crop-Imagery)
 - [GIS-Based Delineation for Livestock Slurry Application](https://github.com/halilunaziru73-creator/GIS-based_delineation_of_areas_suitable_for_livestock_slurry_application)
 - [Hybrid CNN-BiLSTM-Attention for Sediment Transport](https://github.com/halilunaziru73-creator/Hybrid-CNN-BiLSTM-Attention-Sediment-Transport-Agricultural-Gully-System)
 - [Operationalizing GIS and ML across Cropping Systems](https://github.com/halilunaziru73-creator/Operationalizing-GIS-and-Machine-Learning-across-Contrasting-Cropping-Systems)
+- [Geospatial Data Analysis](https://github.com/halilunaziru73-creator/Geospatial-data-analysis)
