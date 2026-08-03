@@ -1,7 +1,7 @@
 # Geospatial Data Analysis
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE) ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21760031.svg)](https://doi.org/10.5281/zenodo.21760031)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21760030.svg)](https://doi.org/10.5281/zenodo.21760030)
 
 **Author:** Naziru Halilu
 
