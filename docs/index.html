@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Geospatial Data Analysis — Course Package — Graphical abstract</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --card: #ffffff; --border: #e2e0d8; --text: #1a1a18;
+    --text-secondary: #6b6a63; --accent-bg: #eaf1fb; --accent-text: #185fa5; --accent-border: #85b7eb;
+    --particle: #378ADD; --node: #b4b2a9;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:2.5rem 1.5rem; background:var(--bg); color:var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 20px; font-weight: 600; margin: 0 0 4px; }
+  .metric { font-size: 14px; color: var(--text-secondary); margin: 0 0 1.5rem; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; }
+  .sim-label { font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .04em; margin: 0 0 8px; }
+  svg#sim { width: 100%; height: auto; margin-bottom: 1.25rem; }
+  #particle { transition: cx 1.6s ease-in-out; }
+  .chips { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:1.25rem; }
+  .chip { font-size:12.5px; padding:7px 12px; border-radius:999px; border:1px solid var(--border);
+    background:var(--bg); cursor:pointer; transition:.25s; color:var(--text); }
+  .chip.active { background:var(--accent-bg); color:var(--accent-text); border-color:var(--accent-border); }
+  .chat-row { display:flex; gap:10px; align-items:flex-start; }
+  .avatar { width:36px; height:36px; border-radius:50%; flex-shrink:0; object-fit:cover; border:1px solid var(--border); }
+  .bubble-col { flex:1; min-width:0; }
+  .bubble-name { font-size:12px; color:var(--text-secondary); margin:0 0 4px; }
+  .bubble { background:var(--bg); border-radius:12px; border-top-left-radius:4px; padding:0.85rem 1rem;
+    min-height:52px; display:flex; align-items:center; font-size:14.5px; line-height:1.6; }
+  .step-figure { width:100%; border-radius:10px; border:1px solid var(--border); margin:12px 0 4px; display:block; }
+  .step-figure-cap { font-size:11.5px; color:var(--text-secondary); margin:0 0 12px; }
+  .figure { width:100%; border-radius:10px; border:1px solid var(--border); margin-bottom:1.25rem; display:block; }
+  .ask-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-top:1.25rem; }
+  .ask-title { font-size:15px; font-weight:600; margin:0 0 4px; }
+  .ask-sub { font-size:13px; color:var(--text-secondary); margin:0 0 1rem; }
+  .ask-field { width:100%; padding:10px 12px; border-radius:8px; border:1px solid var(--border);
+    background:var(--bg); color:var(--text); font-size:14px; font-family:inherit; margin-bottom:10px; }
+  textarea.ask-field { min-height:90px; resize:vertical; }
+  .ask-btn { background:var(--accent-text); color:#fff; border:none; border-radius:8px; padding:10px 18px;
+    font-size:14px; font-weight:500; cursor:pointer; }
+  .ask-btn:hover { opacity:.9; }
+  .ask-note { font-size:12px; color:var(--text-secondary); margin-top:8px; }
+  .ask-status { font-size:13px; margin-top:10px; display:none; }
+  .ask-status.ok { color:#1d9e75; display:block; }
+  .ask-status.err { color:#e24b4a; display:block; }
+  .ask-btn:disabled { opacity:.6; cursor:default; }
+  .back { display:inline-block; margin-top:1.5rem; font-size:13px; color:var(--accent-text); text-decoration:none; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#171715; --card:#201f1c; --border:#37362f; --text:#eceae2; --text-secondary:#9c9a92;
+      --accent-bg:#0c447c; --accent-text:#b5d4f4; --accent-border:#185fa5; --particle:#85b7eb; --node:#5f5e5a; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Geospatial Data Analysis — Course Package</h1>
+  <p class="metric">6 hands-on modules · Python + Google Earth Engine</p>
+  <div class="card">
+    <p class="sim-label">Graphical abstract</p>
+    <img class="figure" src="graphical_abstract.png" alt="Graphical abstract for Geospatial Data Analysis — Course Package">
+    <p class="sim-label">Process simulation</p>
+    <svg id="sim" viewBox="0 0 680 100" role="img" aria-label="Animated process simulation">
+      <line x1="40" y1="55" x2="640" y2="55" stroke="var(--node)" stroke-width="1"/>
+      <g id="nodes"></g>
+      <circle id="particle" cx="40" cy="55" r="8" fill="var(--particle)"/>
+    </svg>
+    <div class="chips" id="chips"></div>
+    <div class="chat-row">
+      <img class="avatar" src="avatar.png" alt="Naziru Halilu">
+      <div class="bubble-col">
+        <p class="bubble-name">Naziru explains this step</p>
+        <div class="bubble" id="detail"></div>
+        <img class="step-figure" id="step-figure" src="" alt="">
+        <p class="step-figure-cap" id="step-figure-cap"></p>
+      </div>
+    </div>
+  </div>
+  <div class="ask-card">
+    <p class="ask-title">Ask a question about this work</p>
+    <p class="ask-sub">Send Naziru a question directly — it's delivered straight to his inbox.</p>
+    <input class="ask-field" id="ask-name" type="text" placeholder="Your name">
+    <input class="ask-field" id="ask-email" type="email" placeholder="Your email (so Naziru can reply)">
+    <textarea class="ask-field" id="ask-question" placeholder="What would you like to ask about this project?"></textarea>
+    <button class="ask-btn" id="ask-btn" onclick="sendQuestion()">Send question</button>
+    <p class="ask-status" id="ask-status"></p>
+  </div>
+  <a class="back" href="https://github.com/halilunaziru73-creator/Geospatial-data-analysis">&larr; Back to GitHub repository</a>
+</div>
+<script>
+async function sendQuestion() {
+  const name = document.getElementById('ask-name').value.trim();
+  const email = document.getElementById('ask-email').value.trim();
+  const question = document.getElementById('ask-question').value.trim();
+  const status = document.getElementById('ask-status');
+  const btn = document.getElementById('ask-btn');
+  status.className = 'ask-status';
+  if (!question) { status.textContent = 'Please enter a question.'; status.className = 'ask-status err'; return; }
+  if (!email) { status.textContent = 'Please enter your email so Naziru can reply.'; status.className = 'ask-status err'; return; }
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        access_key: 'b58a03ec-1761-4115-8b5b-7bba5bc4b65a',
+        subject: 'Question about: Geospatial Data Analysis — Course Package',
+        name: name || 'Anonymous',
+        email: email,
+        message: question
+      })
+    });
+    const result = await res.json();
+    if (result.success) {
+      status.textContent = 'Sent — Naziru will reply to your email.';
+      status.className = 'ask-status ok';
+      document.getElementById('ask-name').value = '';
+      document.getElementById('ask-email').value = '';
+      document.getElementById('ask-question').value = '';
+    } else {
+      status.textContent = 'Something went wrong. Please try again.';
+      status.className = 'ask-status err';
+    }
+  } catch (e) {
+    status.textContent = 'Network error. Please try again.';
+    status.className = 'ask-status err';
+  }
+  btn.disabled = false;
+  btn.textContent = 'Send question';
+}
+</script>
+<script>
+const steps = [{"t": "Vector data analysis", "img": "", "d": "Introduces manipulating vector data in code \u2014 agricultural plot boundaries and hydrology polygons \u2014 the foundation every later GIS operation in the course builds on."}, {"t": "Raster data analysis", "img": "figures/02_Raster_Data_Analysis.png", "d": "Works directly with a digital elevation model to generate slope maps and orthophotos \u2014 the elevation surface shown here is real output from the notebook, not a mock-up."}, {"t": "Optical Sentinel-2 & NDVI", "img": "figures/03_Optical_Data_Sentinel2_NDVI.png", "d": "Builds NDVI vegetation index maps from a real downloaded Sentinel-2 scene, then generates plot-level time series from CSV data to compare crop condition across fields."}, {"t": "Unsupervised classification", "img": "figures/04_Unsupervised_Classification.png", "d": "Classifies land cover with no training labels at all, using both a single Planet image and a three-date time series (April, August, November) to see how classes shift across a growing season."}, {"t": "Supervised classification", "img": "", "d": "Moves from unlabelled to labelled classification in Python \u2014 the natural next step once training data is available, trading some flexibility for higher accuracy."}, {"t": "Sentinel-1 SAR time series", "img": "", "d": "Downloads and processes radar (Sentinel-1) imagery into a time series \u2014 radar sees through cloud cover, making it a critical complement to the optical data from earlier modules."}];
+let idx = 0;
+let timer = null;
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const svgNS = "http://www.w3.org/2000/svg";
+
+function nodeX(i, n) {
+  const left = 40, right = 640;
+  if (n === 1) return left;
+  return left + (right - left) * (i / (n - 1));
+}
+
+function renderNodes() {
+  const g = document.getElementById('nodes');
+  g.innerHTML = '';
+  steps.forEach((s, i) => {
+    const c = document.createElementNS(svgNS, 'circle');
+    c.setAttribute('cx', nodeX(i, steps.length));
+    c.setAttribute('cy', 55);
+    c.setAttribute('r', 5);
+    c.setAttribute('fill', 'var(--node)');
+    g.appendChild(c);
+    const t = document.createElementNS(svgNS, 'text');
+    t.setAttribute('x', nodeX(i, steps.length));
+    t.setAttribute('y', 80);
+    t.setAttribute('text-anchor', 'middle');
+    t.setAttribute('font-size', '11');
+    t.setAttribute('fill', 'var(--text-secondary)');
+    t.textContent = (i + 1);
+    g.appendChild(t);
+  });
+}
+
+function render() {
+  const chipsEl = document.getElementById('chips');
+  chipsEl.innerHTML = '';
+  steps.forEach((s, i) => {
+    const c = document.createElement('button');
+    c.className = 'chip' + (i === idx ? ' active' : '');
+    c.textContent = (i+1) + '. ' + s.t;
+    c.onclick = () => { idx = i; render(); resetTimer(); };
+    chipsEl.appendChild(c);
+  });
+  document.getElementById('detail').textContent = 'Step ' + (idx + 1) + ' — ' + steps[idx].t + '. ' + steps[idx].d;
+  document.getElementById('particle').setAttribute('cx', nodeX(idx, steps.length));
+  const fig = document.getElementById('step-figure');
+  const cap = document.getElementById('step-figure-cap');
+  if (steps[idx].img) {
+    fig.src = steps[idx].img;
+    fig.alt = steps[idx].t;
+    fig.style.display = 'block';
+    cap.textContent = 'Figure from the manuscript — ' + steps[idx].t;
+    cap.style.display = 'block';
+  } else {
+    fig.style.display = 'none';
+    cap.style.display = 'none';
+  }
+}
+
+function tick() { idx = (idx + 1) % steps.length; render(); }
+function resetTimer() { if (timer) clearInterval(timer); if (!reduceMotion) timer = setInterval(tick, 2200); }
+
+renderNodes();
+render();
+resetTimer();
+</script>
+</body>
+</html>
