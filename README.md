@@ -9,6 +9,19 @@ A hands-on course/project package covering vector and raster GIS, optical and
 radar (Sentinel-1/2) remote sensing, and unsupervised/supervised land-cover
 classification in Python and Google Earth Engine.
 
+## Course Overview and Processing Steps
+
+![Graphical Abstract](graphical_abstract.png)
+
+[View interactive walkthrough →](https://halilunaziru73-creator.github.io/Geospatial-data-analysis/)
+
+This package walks through six hands-on modules, each building on the last: vector data
+manipulation, raster/DEM analysis, Sentinel-2 optical NDVI mapping, unsupervised
+classification, supervised classification, and Sentinel-1 SAR time-series processing.
+Unlike the other repositories in this profile, this one is a teaching course rather
+than a research paper — the steps below reflect the notebooks themselves rather than
+a manuscript.
+
 ## Contents
 
 - `01_Vector_Data_Analysis.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/01_Vector_Data_Analysis.ipynb) — vector data manipulation (agricultural plots).
