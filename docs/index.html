@@ -47,6 +47,21 @@
   .ask-status.ok { color:#1d9e75; display:block; }
   .ask-status.err { color:#e24b4a; display:block; }
   .ask-btn:disabled { opacity:.6; cursor:default; }
+  .viva-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; margin-top:1.25rem; }
+  .viva-title { font-size:15px; font-weight:600; margin:0 0 4px; }
+  .viva-sub { font-size:13px; color:var(--text-secondary); margin:0 0 1.25rem; }
+  .viva-cat-nav { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:1.25rem; }
+  .viva-cat-btn { font-size:12px; padding:6px 10px; border-radius:999px; border:1px solid var(--border);
+    background:var(--bg); cursor:pointer; color:var(--text-secondary); }
+  .viva-cat-btn.active { background:var(--accent-bg); color:var(--accent-text); border-color:var(--accent-border); }
+  .viva-row { display:flex; gap:10px; align-items:flex-start; margin-bottom:14px; }
+  .viva-row.mine { flex-direction:row-reverse; }
+  .viva-avatar { width:32px; height:32px; border-radius:50%; flex-shrink:0; object-fit:cover; border:1px solid var(--border); }
+  .viva-bubble { background:var(--bg); border-radius:12px; padding:0.7rem 0.95rem; font-size:14px; line-height:1.55; max-width:calc(100% - 90px); }
+  .viva-bubble.q { border-top-left-radius:4px; }
+  .viva-bubble.a { border-top-right-radius:4px; background:var(--accent-bg); color:var(--accent-text); }
+  .viva-nav-btns { display:flex; justify-content:space-between; margin-top:1rem; }
+  .viva-counter { font-size:12px; color:var(--text-secondary); align-self:center; }
   .back { display:inline-block; margin-top:1.5rem; font-size:13px; color:var(--accent-text); text-decoration:none; }
   @media (prefers-color-scheme: dark) {
     :root { --bg:#171715; --card:#201f1c; --border:#37362f; --text:#eceae2; --text-secondary:#9c9a92;
@@ -87,8 +102,57 @@
     <button class="ask-btn" id="ask-btn" onclick="sendQuestion()">Send question</button>
     <p class="ask-status" id="ask-status"></p>
   </div>
+  <div class="viva-card">
+    <p class="viva-title">Viva-style Q&amp;A about this project</p>
+    <p class="viva-sub">A mock examiner conversation — Naziru's own first-pass answers, walked through by category.</p>
+    <div class="viva-cat-nav" id="viva-cats"></div>
+    <div id="viva-qa"></div>
+    <div class="viva-nav-btns">
+      <button class="ask-btn" onclick="vivaPrev()">&larr; Previous</button>
+      <span class="viva-counter" id="viva-counter"></span>
+      <button class="ask-btn" onclick="vivaNext()">Next &rarr;</button>
+    </div>
+  </div>
   <a class="back" href="https://github.com/halilunaziru73-creator/Geospatial-data-analysis">&larr; Back to GitHub repository</a>
 </div>
+<script>
+const vivaPairs = [{"cat": "The big picture", "q": "How would you explain your research topic to a non-expert in two minutes?", "a": "This is a hands-on course package, not a research paper \u2014 it teaches vector and raster GIS, satellite image analysis, and land-cover classification in Python, using real agricultural plot and satellite data as worked examples."}, {"cat": "The big picture", "q": "What is the ultimate goal of this research, and who benefits from it?", "a": "The ultimate goal is giving students and self-learners a practical, code-first path into geospatial analysis. Anyone learning GIS or remote sensing without access to expensive proprietary software benefits directly."}, {"cat": "The big picture", "q": "Why is this specific problem worth solving right now?", "a": "Open, code-first geospatial teaching material using real Sentinel-1/2 data and Google Earth Engine is still relatively scarce, and demand for these skills in agriculture and environmental monitoring keeps growing."}, {"cat": "Literature & gap", "q": "What are the three most influential papers in your field right now?", "a": "[Draft \u2014 replace with your actual three]: Core rasterio/geopandas documentation and tutorials; Sentinel-2 NDVI methodology papers; and Google Earth Engine's own published cloud-masking and time-series methodology."}, {"cat": "Literature & gap", "q": "Where exactly does the existing literature fall short or fail to address your problem?", "a": "Most GIS teaching material is either purely GUI-based (ArcGIS/QGIS point-and-click) or purely theoretical \u2014 there's a gap for fully coded, reproducible notebooks that go from raw satellite data to a finished analysis."}, {"cat": "Literature & gap", "q": "How does your work build upon or challenge current established theories?", "a": "It's not proposing new theory, but it does package established GIS/remote-sensing methods into a fully reproducible, code-first course sequence that students can run and modify directly."}, {"cat": "Methodology", "q": "Why did you choose this specific methodology over alternative approaches?", "a": "I chose Python notebooks over GUI-based GIS teaching specifically so students leave with transferable, reproducible coding skills rather than software-specific button sequences."}, {"cat": "Methodology", "q": "What are the primary limitations of the data collection methods you plan to use?", "a": "Real satellite data collection depends on cloud cover, revisit time, and download availability \u2014 several notebooks include real download/processing steps that can fail or vary if the data provider changes."}, {"cat": "Methodology", "q": "If your first phase or experiment fails completely, what is your backup plan?", "a": "[Draft]: If live data download fails during a class session, the fallback is the pre-downloaded sample data already bundled in the repo, which every notebook can run against directly."}, {"cat": "Contributions & novelty", "q": "What is the single most novel aspect of your proposed project?", "a": "Structuring the whole sequence \u2014 vector, raster, optical, radar, unsupervised and supervised classification \u2014 as one coherent, code-first progression rather than disconnected individual tutorials."}, {"cat": "Contributions & novelty", "q": "What will we know after your PhD that the academic community does not know today?", "a": "Not applicable in the traditional PhD-novelty sense \u2014 this is teaching material. Its value is in accessibility and reproducibility, not new theoretical contribution."}, {"cat": "Contributions & novelty", "q": "How do you define 'success' for this project?", "a": "Success is a student going from zero to a working, reproducible geospatial analysis pipeline entirely through the notebooks, without needing proprietary GIS software."}, {"cat": "Ownership & scope", "q": "What are you explicitly excluding from this study, and why?", "a": "[Draft]: I'm excluding deep-learning-based classification methods from this specific course \u2014 the focus is deliberately classical GIS and remote-sensing fundamentals before moving to more advanced methods elsewhere."}, {"cat": "Ownership & scope", "q": "What do you anticipate will be the hardest part of this project for you personally?", "a": "[Draft]: Keeping the notebooks working as underlying libraries and APIs (Earth Engine, rasterio) change version is the hardest ongoing maintenance task for a teaching repository like this."}, {"cat": "Ownership & scope", "q": "How does this work align with your long-term career goals after graduation?", "a": "[Draft]: This reflects my long-term interest in open, accessible technical education \u2014 lowering the barrier to entry for geospatial skills, alongside my own research work."}];
+let vivaIdx = 0;
+const vivaCats = [...new Set(vivaPairs.map(p => p.cat))];
+
+function renderVivaCats() {
+  const nav = document.getElementById('viva-cats');
+  nav.innerHTML = '';
+  vivaCats.forEach((c) => {
+    const b = document.createElement('button');
+    b.className = 'viva-cat-btn' + (vivaPairs[vivaIdx].cat === c ? ' active' : '');
+    b.textContent = c;
+    b.onclick = () => { vivaIdx = vivaPairs.findIndex(p => p.cat === c); renderViva(); };
+    nav.appendChild(b);
+  });
+}
+
+function renderViva() {
+  const pair = vivaPairs[vivaIdx];
+  const qa = document.getElementById('viva-qa');
+  qa.innerHTML = '';
+  const qRow = document.createElement('div');
+  qRow.className = 'viva-row';
+  qRow.innerHTML = '<div class="viva-avatar" style="display:flex;align-items:center;justify-content:center;background:var(--bg);font-size:11px;color:var(--text-secondary)">Q</div><div class="viva-bubble q">' + pair.q + '</div>';
+  qa.appendChild(qRow);
+  const aRow = document.createElement('div');
+  aRow.className = 'viva-row mine';
+  aRow.innerHTML = '<img class="viva-avatar" src="avatar.png" alt="Naziru"><div class="viva-bubble a">' + pair.a + '</div>';
+  qa.appendChild(aRow);
+  document.getElementById('viva-counter').textContent = (vivaIdx + 1) + ' / ' + vivaPairs.length;
+  renderVivaCats();
+}
+
+function vivaNext() { vivaIdx = (vivaIdx + 1) % vivaPairs.length; renderViva(); }
+function vivaPrev() { vivaIdx = (vivaIdx - 1 + vivaPairs.length) % vivaPairs.length; renderViva(); }
+
+renderViva();
+</script>
 <script>
 async function sendQuestion() {
   const name = document.getElementById('ask-name').value.trim();
