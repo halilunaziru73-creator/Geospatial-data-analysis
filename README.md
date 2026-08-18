@@ -13,6 +13,10 @@ classification in Python and Google Earth Engine.
 
 ![Graphical Abstract](graphical_abstract.png)
 
+**Workflow sketch**
+
+![Workflow Sketch](workflow_sketch.png)
+
 [View interactive walkthrough →](https://halilunaziru73-creator.github.io/Geospatial-data-analysis/)
 
 This package walks through six hands-on modules, each building on the last: vector data
