@@ -11,8 +11,6 @@ classification in Python and Google Earth Engine.
 
 ## Course Overview and Processing Steps
 
-![Graphical Abstract](graphical_abstract.png)
-
 **Workflow sketch**
 
 ![Workflow Sketch](workflow_sketch.png)
