@@ -21,36 +21,36 @@ This package walks through six hands-on modules, each building on the last: vect
 manipulation, raster/DEM analysis, Sentinel-2 optical NDVI mapping, unsupervised
 classification, supervised classification, and Sentinel-1 SAR time-series processing.
 Unlike the other repositories in this profile, this one is a teaching course rather
-than a research paper — the steps below reflect the notebooks themselves rather than
+than a research paper, the steps below reflect the notebooks themselves rather than
 a manuscript.
 
 ## Contents
 
-- `01_Vector_Data_Analysis.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/01_Vector_Data_Analysis.ipynb) — vector data manipulation (agricultural plots).
-- `02_Raster_Data_Analysis.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/02_Raster_Data_Analysis.ipynb) — raster data manipulation; digital elevation
-  model, slope map generation, orthophotos.
-- `03_Optical_Data_Sentinel2_NDVI.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/03_Optical_Data_Sentinel2_NDVI.ipynb) — working with a downloaded Sentinel-2
-  image: NDVI, time-series generation from CSV, plot/crop comparison.
-- `04_Unsupervised_Classification.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/04_Unsupervised_Classification.ipynb) — unsupervised classification with a
-  single Planet image and a 3-date time series (April, August, November).
-- `05_Supervised_Classification.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/05_Supervised_Classification.ipynb) — supervised classification in Python.
-- `06_Sentinel1_Download_Processing_TimeSeries.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/06_Sentinel1_Download_Processing_TimeSeries.ipynb) — Sentinel-1 download,
-  processing, and time-series analysis.
-- `GoogleEarthEngine_Class3_CloudMasking.js` — Google Earth Engine script
-  (filters, cloud masking, image collection handling).
-- `GIS_Vector_Layers_Soil_Hydrology_AgriculturalPlots.7z` — compressed shapefiles:
-  soil polygons (`EDAFOL_Pol_Suelos25m`), main-river hydrology polygons
-  (`HIDROG_Pol_RioPrincipal`), and the 2017 agricultural plot register
-  (`PAC_2017`).
-- `Class3_Intersection_Plots.7z` — compressed shapefile of plot intersections
-  used in the Google Earth Engine exercise.
-- `Unsupervised_Classification_PlotResults.7z` — compressed CSV of per-plot
-  unsupervised classification results.
-- `Sentinel2_Composite_2017.tif` — Sentinel-2 2017 raster composite.
-- `Sentinel2_PlotStatistics_Raw.csv` — Sentinel-2 zonal statistics per
-  agricultural plot (raw).
-- `Sentinel2_PlotStatistics_MovingAverage.csv` — same, smoothed with a moving
-  average.
+- `01_Vector_Data_Analysis.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/01_Vector_Data_Analysis.ipynb), vector data manipulation (agricultural plots).
+- `02_Raster_Data_Analysis.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/02_Raster_Data_Analysis.ipynb), raster data manipulation; digital elevation
+ model, slope map generation, orthophotos.
+- `03_Optical_Data_Sentinel2_NDVI.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/03_Optical_Data_Sentinel2_NDVI.ipynb), working with a downloaded Sentinel-2
+ image: NDVI, time-series generation from CSV, plot/crop comparison.
+- `04_Unsupervised_Classification.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/04_Unsupervised_Classification.ipynb), unsupervised classification with a
+ single Planet image and a 3-date time series (April, August, November).
+- `05_Supervised_Classification.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/05_Supervised_Classification.ipynb), supervised classification in Python.
+- `06_Sentinel1_Download_Processing_TimeSeries.ipynb` [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/halilunaziru73-creator/Geospatial-data-analysis/blob/main/06_Sentinel1_Download_Processing_TimeSeries.ipynb), Sentinel-1 download,
+ processing, and time-series analysis.
+- `GoogleEarthEngine_Class3_CloudMasking.js`, Google Earth Engine script
+ (filters, cloud masking, image collection handling).
+- `GIS_Vector_Layers_Soil_Hydrology_AgriculturalPlots.7z`, compressed shapefiles:
+ soil polygons (`EDAFOL_Pol_Suelos25m`), main-river hydrology polygons
+ (`HIDROG_Pol_RioPrincipal`), and the 2017 agricultural plot register
+ (`PAC_2017`).
+- `Class3_Intersection_Plots.7z`, compressed shapefile of plot intersections
+ used in the Google Earth Engine exercise.
+- `Unsupervised_Classification_PlotResults.7z`, compressed CSV of per-plot
+ unsupervised classification results.
+- `Sentinel2_Composite_2017.tif`, Sentinel-2 2017 raster composite.
+- `Sentinel2_PlotStatistics_Raw.csv`, Sentinel-2 zonal statistics per
+ agricultural plot (raw).
+- `Sentinel2_PlotStatistics_MovingAverage.csv`, same, smoothed with a moving
+ average.
 
 All `.7z` archives are kept compressed because several of the underlying
 shapefiles individually exceed 100 MB uncompressed. Extract them locally with
@@ -73,8 +73,7 @@ This is a Jupyter notebook-based package. At minimum you'll need:
 pip install jupyter numpy pandas matplotlib geopandas rasterio scikit-learn earthengine-api
 ```
 
-(Some notebooks may need additional packages depending on which cells you run —
-install any missing package as prompted.)
+(Some notebooks may need additional packages depending on which cells you run, install any missing package as prompted.)
 
 ### 3. Extract the compressed data archives
 
@@ -108,16 +107,16 @@ are aligned across notebooks):
 ### 5. Google Earth Engine script
 
 `GoogleEarthEngine_Class3_CloudMasking.js` runs separately in the
-[Google Earth Engine Code Editor](https://code.earthengine.google.com/) — sign
+[Google Earth Engine Code Editor](https://code.earthengine.google.com/), sign
 in with a GEE-enabled Google account, paste the script, and click **Run**.
 
 ## Notes
 
 - Institutional logos embedded in the notebooks reflect only the funding
-  partners relevant to this package (UPNA and EU co-funding).
+ partners relevant to this package (UPNA and EU co-funding).
 - File names follow a consistent numbering scheme, and all in-notebook data
-  references are aligned with these file names so the notebooks run correctly
-  end to end.
+ references are aligned with these file names so the notebooks run correctly
+ end to end.
 
 ## License
 
